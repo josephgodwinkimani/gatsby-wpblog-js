@@ -1,0 +1,10 @@
+{
+    "prettier.endOfLine": "lf",
+    "prettier.ignorePath": ".prettierignore",
+    "prettier.jsxSingleQuote": false,
+    "prettier.prettierPath": ".prettierrcjs",
+    "prettier.useEditorConfig": true,
+    "eslint.format.enable": false,
+    "eslint.codeActionsOnSave.mode": "problems",
+    "eslint.alwaysShowStatus": true
+}

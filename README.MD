@@ -1,6 +1,6 @@
 ![wpstarter](https://github.com/ghatechteam/gatsby-wpblog-js/blob/main/screenshot.png)
 
-## Blog powered by Gatsby + Headless WordPress CMS
+## 🚀 Blog powered by Gatsby + Headless WordPress CMS
 
 > This is a starter, boilerplate and blueprint
 
@@ -66,7 +66,12 @@ Now we have the ability to properly cache data and this makes incremental builds
 
 5. Install dependencies of the frontend i.e. `/frontend`
 
-6. Develop the frontend - run with the `gatsby develop` command
+    ```shell
+    cd frontend/
+    yarn install    
+    ```
+
+6. Develop the frontend - run with the `gatsby develop` or `yarn run develop` command
 
 Explore the data layer http://localhost:8000/___graphql
 

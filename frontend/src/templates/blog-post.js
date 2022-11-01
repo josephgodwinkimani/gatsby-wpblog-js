@@ -16,16 +16,16 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-
-
-const BlogPostTemplate = ({ data: { previous, next, post } }) => {
+function BlogPostTemplate({ data: { previous, next, post } }) {
   const featuredImage = {
-    data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
+    data:
+      post.featuredImage?.node?.localFile?.childImageSharp
+        ?.gatsbyImageData,
     alt: post.featuredImage?.node?.alt || ``,
   }
 
-  const slug = post.slug
-  const title = post.title
+  const { slug } = post
+  const { title } = post
 
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
@@ -57,7 +57,9 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         </header>
 
         {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
+          <section itemProp="articleBody">
+            {parse(post.content)}
+          </section>
         )}
 
         <hr />
@@ -65,8 +67,6 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         <footer>
           <Bio />
         </footer>
-
-
       </article>
 
       <nav className="blog-post-nav">
@@ -105,39 +105,39 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostById(
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
-    post: wpPost(id: { eq: $id }) {
-      id
-      excerpt
-      content
-      title
-      date(formatString: "MMMM DD, YYYY")
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                quality: 100
-                placeholder: TRACED_SVG
-                layout: FULL_WIDTH
-              )
+    query BlogPostById(
+        $id: String!
+        $previousPostId: String
+        $nextPostId: String
+    ) {
+        post: wpPost(id: { eq: $id }) {
+            id
+            excerpt
+            content
+            title
+            date(formatString: "MMMM DD, YYYY")
+            featuredImage {
+                node {
+                    altText
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData(
+                                quality: 100
+                                placeholder: TRACED_SVG
+                                layout: FULL_WIDTH
+                            )
+                        }
+                    }
+                }
             }
-          }
         }
-      }
+        previous: wpPost(id: { eq: $previousPostId }) {
+            uri
+            title
+        }
+        next: wpPost(id: { eq: $nextPostId }) {
+            uri
+            title
+        }
     }
-    previous: wpPost(id: { eq: $previousPostId }) {
-      uri
-      title
-    }
-    next: wpPost(id: { eq: $nextPostId }) {
-      uri
-      title
-    }
-  }
 `

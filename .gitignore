@@ -18,6 +18,7 @@
 /app/public/index.php
 logs/nginx/error.log
 logs/php/error.log
+/frontend/cleanup.bat
 # Do not ignore me
 !local-site.json
 !/app/public/wp-config.php
