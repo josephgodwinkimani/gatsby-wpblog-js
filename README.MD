@@ -33,7 +33,7 @@ Check out this page on [convincing developers why Gatsby is awesome](https://www
 - [How Tinder is using WordPress with Gatsby](https://www.gatsbyjs.com/blog/2020-04-07-la-2020-boss/)
 - [Zac Gordon on what Gatsby is and why to use it](https://www.youtube.com/watch?v=GuvAMcsoreI)
 
-## Why use this plugin instead of gatsby-source-wordpress plugin?
+## Why use gatsby-source-wordpress plugin?
 
 Before `gatsby-source-wordpress@v4` was released, there were 2 main ways to work with Gatsby & WordPress: `gatsby-source-wordpress@v3` and `gatsby-source-graphql`.
 
@@ -54,7 +54,9 @@ Now we have the ability to properly cache data and this makes incremental builds
 
 **Windows**: `C:\Users\username\AppData\Roaming\Local\blueprints`
 
-**Linux**:
+**Linux**: `~/.config/Local/blueprints`
+
+**Mac**: 
 
 3. Create a website from the `wpstarter` blueprint on your **Local by FlyWheel**
 
