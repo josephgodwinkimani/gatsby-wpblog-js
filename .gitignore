@@ -16,6 +16,8 @@
 /app/public/wp-trackback.php
 /app/public/xmlrpc.php
 /app/public/index.php
+logs/nginx/error.log
+logs/php/error.log
 # Do not ignore me
 !local-site.json
 !/app/public/wp-config.php
