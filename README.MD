@@ -98,8 +98,4 @@ See [more](https://www.gatsbyjs.com/docs/how-to/performance/)
 - [Debugging the Build Process](https://www.gatsbyjs.com/docs/debugging-the-build-process/)
 - [Debugging and Troubleshooting: gatsby-source-wordpress](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/docs/debugging-and-troubleshooting.md)
 - [Server timeouts & Over-resourced server errors](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/docs/hosting.md)
-- :medal_sports: [Usage with popular WPGraphQL extensions](./usage-with-popular-wp-graphql-extensions.md)
-- :hammer_and_wrench: [Debugging and troubleshooting](./debugging-and-troubleshooting.md)
-- :national_park: [Community and Support](./community-and-support.md)
-- :point_left: [Back to README.md](../README.md)
 
