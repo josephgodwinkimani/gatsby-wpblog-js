@@ -16,17 +16,7 @@ updates:
       timezone: "Africa/Nairobi"
     # Add assignees
     assignees:
-      - "josephgodwinkimani"
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "daily"
-      # Check for npm updates at 9am UTC
-      time: "09:00"
-      # Use Kenya Standard Time (UTC +03:00)
-      timezone: "Africa/Nairobi"
-    assignees:
-      - "josephgodwinkimani"      
+      - "josephgodwinkimani"    
   - package-ecosystem: "npm"
     # Files stored in `app` directory
     directory: "/frontend/"
