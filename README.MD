@@ -1,3 +1,5 @@
+![wpstarter](https://github.com/ghatechteam/gatsby-wpblog-js/blob/main/screenshot.png)
+
 ## Blog powered by Gatsby + Headless WordPress CMS
 
 > This is a starter, boilerplate and blueprint
