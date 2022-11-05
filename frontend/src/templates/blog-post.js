@@ -24,6 +24,10 @@ function BlogPostTemplate({ data: { previous, next, post } }) {
     alt: post.featuredImage?.node?.alt || ``,
   }
 
+  const posts = { data: post.categories?.nodes }
+
+  //console.log(JSON.stringify(posts))
+
   const { slug } = post
   const { title } = post
 
@@ -31,6 +35,7 @@ function BlogPostTemplate({ data: { previous, next, post } }) {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: slug, title },
   }
+
 
   return (
     <Layout>
@@ -66,7 +71,26 @@ function BlogPostTemplate({ data: { previous, next, post } }) {
 
         <footer>
           <Bio />
+
+          <h4>Categories</h4>
+
+          <hr />
+
+          {(posts.data && posts.data.length > 0) && posts.data.map(post => {
+            const title = post.name
+
+            return (
+              <span key={post.id} className="blog-post-category">
+
+                <span >{title}</span>
+
+              </span>
+            )
+          })}
+
+
         </footer>
+
       </article>
 
       <nav className="blog-post-nav">
@@ -98,7 +122,7 @@ function BlogPostTemplate({ data: { previous, next, post } }) {
       </nav>
 
       <DiscussionEmbed {...disqusConfig} />
-    </Layout>
+    </Layout >
   )
 }
 
@@ -116,6 +140,14 @@ export const pageQuery = graphql`
             content
             title
             date(formatString: "MMMM DD, YYYY")
+            categories {
+              nodes {
+                id
+                name
+                uri
+                count
+              }
+            }
             featuredImage {
                 node {
                     altText

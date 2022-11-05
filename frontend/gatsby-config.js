@@ -69,6 +69,11 @@ module.exports = {
                     timeout: 100000,
                     circularQueryLimit: 50,
                 },
+                includedRoutes: [
+                    '**/posts',
+                    '**/tags',
+                    '**/categories'
+                ]
             },
         },
 
