@@ -81,13 +81,12 @@ function BlogPostTemplate({ data: { previous, next, post } }) {
 
             return (
               <span key={post.id} className="blog-post-category">
-
-                <span >{title}</span>
-
+                <Link to={post.uri} itemProp="url">
+                  <span >{title}</span>
+                </Link>
               </span>
             )
           })}
-
 
         </footer>
 

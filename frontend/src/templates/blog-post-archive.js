@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
 
-import Bio from "../components/bio"
+//import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -16,7 +16,6 @@ const BlogIndex = ({
     return (
       <Layout isHomePage>
         <Seo title="All posts" />
-        <Bio />
         <p>
           No blog posts found. Add posts to your WordPress site and they'll
           appear here!
@@ -28,8 +27,6 @@ const BlogIndex = ({
   return (
     <Layout isHomePage>
       <Seo title="All posts" />
-
-      <Bio />
 
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
@@ -81,8 +78,7 @@ export const pageQuery = graphql`
         excerpt
         uri
         date(formatString: "MMMM DD, YYYY")
-        title
-        excerpt
+        title        
       }
     }
   }

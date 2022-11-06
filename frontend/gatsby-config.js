@@ -25,7 +25,9 @@ module.exports = {
      * If you need any more you can search here: https://www.gatsbyjs.com/plugins/
      */
     plugins: [
+        `gatsby-plugin-fontawesome-css`,
         {
+
             /**
              * First up is the WordPress source plugin that connects Gatsby
              * to your WordPress site.
@@ -183,4 +185,5 @@ module.exports = {
             },
         },
     ],
+
 }
