@@ -50,9 +50,9 @@ Now we have the ability to properly cache data and this makes incremental builds
 
 ## Getting started
 
-1. Edit the `path` in `local-site.json` and add `wp-admin`, `wp-includes` and all missing `wp-*.php`
+1. Edit the `path` in `local-site.json` and add `wp-admin`, `wp-includes` and all missing `wp-*.php` folders and files from https://wordpress.org/latest.zip
 
-2. Zip this repo and drop it as blueprint:
+2. Zip `backend`, rename it to whichever name you prefer and drop it as blueprint in LocalWP:
 
 **Windows**: `C:\Users\username\AppData\Roaming\Local\blueprints`
 
@@ -60,9 +60,9 @@ Now we have the ability to properly cache data and this makes incremental builds
 
 **Mac**: 
 
-3. Create a website from the `wpstarter` blueprint on your **Local by FlyWheel**
+3. Create a website from the blueprint on your **Local by FlyWheel**
 
-4. Install [Gatsby CLI](https://www.gatsbyjs.com/docs/reference/gatsby-cli/) `npm install --global gatsby-cli`
+4. Install [Gatsby CLI](https://www.gatsbyjs.com/docs/reference/gatsby-cli/) `yarn add gatsby-cli -g`
 
 5. Install dependencies of the frontend i.e. `/frontend`
 
@@ -72,6 +72,8 @@ Now we have the ability to properly cache data and this makes incremental builds
     ```
 
 6. Develop the frontend - run with the `gatsby develop` or `yarn run develop` command
+
+7. Clear gatsby cache `yarn run clean`
 
 Explore the data layer http://localhost:8000/___graphql
 
