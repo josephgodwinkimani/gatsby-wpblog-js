@@ -31,6 +31,9 @@ exports.createPages = async gatsbyUtilities => {
 
   // And a paginated archive of all categories
   await createBlogPostCategoryArchive({ categories, gatsbyUtilities })
+
+  // If there are category posts, create pages for them
+  await createIndividualBlogCategoryPostPages({ categories, gatsbyUtilities })
 }
 
 /**
@@ -60,6 +63,38 @@ const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
           // We also use the next and previous id's to query them and add links!
           previousPostId: previous ? previous.id : null,
           nextPostId: next ? next.id : null,
+        },
+      })
+    )
+  )
+
+/**
+* This function creates all the individual blog pages in this site
+*/
+const createIndividualBlogCategoryPostPages = async ({ categories, gatsbyUtilities }) =>
+  Promise.all(
+    categories.map(({ previous, category, next }) =>
+      // createPage is an action passed to createPages
+      // See https://www.gatsbyjs.com/docs/actions#createPage for more info
+      gatsbyUtilities.actions.createPage({
+        // Use the WordPress uri as the Gatsby page path
+        // This is a good idea so that internal links and menus work 👍
+        path: category.uri,
+
+        // use the blog post template as the page component
+        component: path.resolve(`./src/templates/blog-category-post.js`),
+
+        // `context` is available in the template as a prop and
+        // as a variable in GraphQL.
+        context: {
+          // we need to add the post id here
+          // so our blog post template knows which blog post
+          // the current page is (when you open it in a browser)
+          id: category.id,
+
+          // We also use the next and previous id's to query them and add links!
+          previousCategoryId: previous ? previous.id : null,
+          nextCategoryId: next ? next.id : null,
         },
       })
     )
