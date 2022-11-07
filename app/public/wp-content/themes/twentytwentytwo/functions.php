@@ -65,3 +65,25 @@ add_action( 'wp_enqueue_scripts', 'twentytwentytwo_styles' );
 
 // Add block patterns
 require get_template_directory() . '/inc/block-patterns.php';
+
+// https://github.com/wp-graphql/wp-graphql/discussions/1836#discussioncomment-562517
+add_action( 'graphql_register_types', function() {
+
+	register_graphql_field( 'RootQuery', 'siteLogo', [
+		'type' => 'MediaItem',
+		'description' => __( 'The logo set in the customizer', 'your-textdomain' ),
+		'resolve' => function() {
+
+			$logo_id = get_theme_mod( 'custom_logo' );
+
+			if ( ! isset( $logo_id ) || ! absint( $logo_id ) ) {
+				return null;
+			}
+
+			$media_object = get_post( $logo_id );
+			return new \WPGraphQL\Model\Post( $media_object );
+
+		}
+	]  );
+
+} );
