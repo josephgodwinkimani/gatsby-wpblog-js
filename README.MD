@@ -50,9 +50,9 @@ Now we have the ability to properly cache data and this makes incremental builds
 
 ## Getting started
 
-1. Edit the `path` in `local-site.json` and add `wp-admin`, `wp-includes` and all missing `wp-*.php` folders and files from https://wordpress.org/latest.zip
+1. `wget https://github.com/ghatechteam/wpstarter/archive/refs/heads/main.zip`  
 
-2. Zip `backend`, rename it to whichever name you prefer and drop it as blueprint in LocalWP:
+2. Zip `main`, rename it to whichever name you prefer and drop it as blueprint in LocalWP:
 
 **Windows**: `C:\Users\username\AppData\Roaming\Local\blueprints`
 
